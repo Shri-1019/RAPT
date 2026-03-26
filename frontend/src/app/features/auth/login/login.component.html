@@ -1,0 +1,157 @@
+<div class="login-container">
+  <!-- Left Side - Editorial Imagery -->
+  <div class="login-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <a routerLink="/" class="hero-logo">
+        <div class="logo-icon">
+          <svg width="48" height="43" viewBox="0 0 30 27" fill="none">
+            <path d="M15 0L30 7.5L15 15L0 7.5L15 0Z" fill="#FF4E50"/>
+            <path d="M15 27L0 19.5L0 7.5L15 15L15 27Z" fill="#FF8C00"/>
+            <path d="M15 27L30 19.5L30 7.5L15 15L15 27Z" fill="#F9D423"/>
+          </svg>
+        </div>
+        <span class="logo-text">RAPT</span>
+      </a>
+
+      <div class="hero-text">
+        <div class="hero-label">The Architectural Vanguard</div>
+        <h1 class="hero-title">
+          <div>Elevated</div>
+          <div>Property</div>
+          <div class="highlight">Management.</div>
+        </h1>
+        <div class="hero-divider">
+          <div class="divider-line"></div>
+          <p class="hero-description">
+            Seamlessly connecting landlords and tenants through editorial-grade digital experiences.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">12k+</div>
+          <div class="stat-label">Active Leases</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">Secure Trust</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side - Login Form -->
+  <div class="login-form-container">
+    <div class="login-form-wrapper">
+      <!-- Role Toggle -->
+      <div class="role-toggle">
+        <button 
+          [class.active]="role === 'landlord'"
+          (click)="role = 'landlord'"
+          class="role-btn">
+          Landlord
+        </button>
+        <button 
+          [class.active]="role === 'tenant'"
+          (click)="role = 'tenant'"
+          class="role-btn">
+          Tenant
+        </button>
+      </div>
+
+      <!-- Welcome Text -->
+      <div class="welcome-section">
+        <h2 class="welcome-title">Welcome Back</h2>
+        <p class="welcome-subtitle">Please enter your details to access your account.</p>
+      </div>
+
+      <!-- Form -->
+      <form (ngSubmit)="onSubmit()" class="login-form">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <div class="input-wrapper">
+            <lucide-angular [img]="Mail" size="18" class="input-icon"></lucide-angular>
+            <input 
+              type="email" 
+              [(ngModel)]="email"
+              name="email"
+              placeholder="name@example.com"
+              class="form-input"
+              required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="password-header">
+            <label class="form-label">Password</label>
+            <a routerLink="/auth/forgot-password" class="forgot-link">Forgot?</a>
+          </div>
+          <div class="input-wrapper">
+            <lucide-angular [img]="Lock" size="18" class="input-icon"></lucide-angular>
+            <input 
+              type="password" 
+              [(ngModel)]="password"
+              name="password"
+              placeholder="••••••••"
+              class="form-input"
+              required>
+          </div>
+        </div>
+
+        <div class="remember-me">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+            <span>Keep me signed in for 30 days</span>
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Sign In</span>
+          <span *ngIf="isLoading" class="spinner"></span>
+        </button>
+      </form>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span>Or Continue With</span>
+      </div>
+
+      <!-- OAuth Buttons -->
+      <div class="oauth-buttons">
+        <button class="oauth-btn" (click)="loginWithGoogle()">
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#EA4335" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#4285F4" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          <span>Google</span>
+        </button>
+        <button class="oauth-btn" (click)="loginWithApple()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="black">
+            <path d="M17.05 20.28c-.98.95-2.05.95-3.08.45-1.09-.5-2.09-.5-3.24 0-1.25.55-2.05.5-2.93-.45-3.32-3.75-2.94-9.25 1.18-10.9 1.04-.45 2.04-.2 2.79.25.75.45 1.6.6 2.53.25.35-.15.75-.35 1.2-.45.95-.25 1.85.1 2.55.7.75.65 1.25 1.6 1.05 2.6-.05.25-.15.5-.25.75-.15.25-.35.45-.6.65-.3.25-.45.55-.45.9 0 .35.15.65.45.9.25.2.45.45.6.75.1.25.15.5.15.75 0 .8-.45 1.55-1.05 2.05zM16.2 3.5c.75-.9 1.2-2.05 1.05-3.25-.9.05-1.95.55-2.6 1.25-.6.65-1.05 1.55-1.05 2.5.9 0 1.95-.5 2.6-1.25z"/>
+          </svg>
+          <span>Apple</span>
+        </button>
+      </div>
+
+      <!-- Register Prompt -->
+      <div class="register-prompt">
+        <span>New to RAPT?</span>
+        <a routerLink="/auth/signup" class="register-link">Create an account</a>
+      </div>
+
+      <!-- Legal -->
+      <div class="legal-links">
+        <div>© 2024 RAPT MANAGEMENT</div>
+        <div class="legal-links-group">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

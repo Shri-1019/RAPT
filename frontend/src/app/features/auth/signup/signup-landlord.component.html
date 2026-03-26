@@ -1,0 +1,169 @@
+<div class="signup-landlord-container">
+  <!-- Left Side - Form -->
+  <div class="form-side">
+    <div class="form-wrapper">
+      <a routerLink="/auth/signup" class="back-link">
+        <lucide-angular [img]="ArrowLeft" size="16"></lucide-angular>
+        <span>Back to role selection</span>
+      </a>
+
+      <div class="form-header">
+        <div class="header-icon">
+          <lucide-angular [img]="Building2" size="28" color="white"></lucide-angular>
+        </div>
+        <h1 class="form-title">Create Landlord Account</h1>
+        <p class="form-subtitle">Start managing your properties today</p>
+      </div>
+
+      <div class="form-card">
+        <form (ngSubmit)="onSubmit()" class="signup-form">
+          <!-- Name Fields -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <div class="input-wrapper">
+                <lucide-angular [img]="User" size="18" class="input-icon"></lucide-angular>
+                <input 
+                  type="text" 
+                  [(ngModel)]="formData.firstName"
+                  name="firstName"
+                  class="form-input"
+                  placeholder="John"
+                  required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input 
+                type="text" 
+                [(ngModel)]="formData.lastName"
+                name="lastName"
+                class="form-input"
+                placeholder="Doe"
+                required>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <div class="input-wrapper">
+              <lucide-angular [img]="Mail" size="18" class="input-icon"></lucide-angular>
+              <input 
+                type="email" 
+                [(ngModel)]="formData.email"
+                name="email"
+                class="form-input"
+                placeholder="john@example.com"
+                required>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <div class="input-wrapper">
+              <lucide-angular [img]="Phone" size="18" class="input-icon"></lucide-angular>
+              <input 
+                type="tel" 
+                [(ngModel)]="formData.phone"
+                name="phone"
+                class="form-input"
+                placeholder="(555) 123-4567"
+                required>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div class="input-wrapper">
+              <lucide-angular [img]="Lock" size="18" class="input-icon"></lucide-angular>
+              <input 
+                type="password" 
+                [(ngModel)]="formData.password"
+                name="password"
+                class="form-input"
+                placeholder="••••••••"
+                required>
+            </div>
+            <!-- Password Strength Indicator -->
+            <div *ngIf="formData.password" class="password-strength">
+              <div class="strength-bar" [style.width]="formData.password.length >= 8 ? '100%' : formData.password.length * 12.5 + '%'"></div>
+              <span class="strength-text" [style.color]="strengthColor">
+                {{ passwordStrength }} password
+              </span>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label class="form-label">Confirm Password</label>
+            <div class="input-wrapper">
+              <lucide-angular [img]="Lock" size="18" class="input-icon"></lucide-angular>
+              <input 
+                type="password" 
+                [(ngModel)]="formData.confirmPassword"
+                name="confirmPassword"
+                class="form-input"
+                placeholder="••••••••"
+                required>
+            </div>
+            <div *ngIf="formData.confirmPassword && formData.password !== formData.confirmPassword" class="error-message">
+              Passwords do not match
+            </div>
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="error-message global-error">
+            {{ errorMessage }}
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn" [disabled]="isLoading">
+            <span *ngIf="!isLoading">Create Account</span>
+            <span *ngIf="isLoading" class="spinner"></span>
+          </button>
+        </form>
+      </div>
+
+      <div class="signin-link">
+        <span>Already have an account?</span>
+        <a routerLink="/auth/login">Sign In</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side - Info -->
+  <div class="info-side">
+    <div class="info-content">
+      <h2 class="info-title">Everything you need to manage your properties</h2>
+      <ul class="feature-list">
+        <li>
+          <div class="feature-dot"></div>
+          <span>Centralized property dashboard</span>
+        </li>
+        <li>
+          <div class="feature-dot"></div>
+          <span>Automated rent collection</span>
+        </li>
+        <li>
+          <div class="feature-dot"></div>
+          <span>Tenant screening & background checks</span>
+        </li>
+        <li>
+          <div class="feature-dot"></div>
+          <span>Financial reporting & analytics</span>
+        </li>
+        <li>
+          <div class="feature-dot"></div>
+          <span>Maintenance request management</span>
+        </li>
+        <li>
+          <div class="feature-dot"></div>
+          <span>24/7 support from our team</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

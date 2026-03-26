@@ -1,0 +1,68 @@
+<div class="signup-role-container">
+  <div class="signup-role-card">
+    <!-- Logo -->
+    <div class="logo-section">
+      <div class="logo">
+        <svg width="48" height="43" viewBox="0 0 30 27" fill="none">
+          <path d="M15 0L30 7.5L15 15L0 7.5L15 0Z" fill="#FF4E50"/>
+          <path d="M15 27L0 19.5L0 7.5L15 15L15 27Z" fill="#FF8C00"/>
+          <path d="M15 27L30 19.5L30 7.5L15 15L15 27Z" fill="#F9D423"/>
+        </svg>
+        <span class="logo-text">RAPT</span>
+      </div>
+      <h1 class="title">Join RAPT</h1>
+      <p class="subtitle">Choose your role to get started</p>
+    </div>
+
+    <!-- Role Selection -->
+    <div class="roles-grid">
+      <!-- Landlord -->
+      <div class="role-card" (click)="selectRole('landlord')">
+        <div class="role-icon">
+          <lucide-angular [img]="Building2" size="32" color="white"></lucide-angular>
+        </div>
+        <h2 class="role-title">I'm a Landlord</h2>
+        <p class="role-description">
+          Manage properties, tenants, leases, and financials all in one place
+        </p>
+        <ul class="role-features">
+          <li>Property management dashboard</li>
+          <li>Tenant screening & onboarding</li>
+          <li>Automated rent collection</li>
+          <li>Financial reports & analytics</li>
+        </ul>
+        <div class="role-cta">
+          <span>Get Started</span>
+          <lucide-angular [img]="ArrowRight" size="20"></lucide-angular>
+        </div>
+      </div>
+
+      <!-- Tenant -->
+      <div class="role-card tenant" (click)="selectRole('tenant')">
+        <div class="role-icon tenant-icon">
+          <lucide-angular [img]="Home" size="32" color="white"></lucide-angular>
+        </div>
+        <h2 class="role-title">I'm a Tenant</h2>
+        <p class="role-description">
+          Find your perfect home and manage your rental experience seamlessly
+        </p>
+        <ul class="role-features">
+          <li>Search available properties</li>
+          <li>Pay rent online securely</li>
+          <li>Submit maintenance requests</li>
+          <li>Access lease documents 24/7</li>
+        </ul>
+        <div class="role-cta tenant-cta">
+          <span>Get Started</span>
+          <lucide-angular [img]="ArrowRight" size="20"></lucide-angular>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign In Link -->
+    <div class="signin-link">
+      <span>Already have an account?</span>
+      <a routerLink="/auth/login">Sign In</a>
+    </div>
+  </div>
+</div>
