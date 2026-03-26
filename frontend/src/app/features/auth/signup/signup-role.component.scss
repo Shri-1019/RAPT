@@ -1,0 +1,164 @@
+.signup-role-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: #f4fafd;
+}
+
+.signup-role-card {
+  max-width: 1024px;
+  width: 100%;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: -2.4px;
+  color: #161d1f;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: -0.02em;
+  color: #161d1f;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #5b403e;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.role-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  border: 2px solid #e2e9ec;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.role-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #FF4E50 0%, #FF8C00 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: transform 0.3s;
+
+  &.tenant-icon {
+    background: #10B981;
+  }
+}
+
+.role-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #161d1f;
+  margin-bottom: 12px;
+}
+
+.role-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #5b403e;
+  margin-bottom: 24px;
+}
+
+.role-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #161d1f;
+    margin-bottom: 12px;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+    }
+  }
+}
+
+.role-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FF4E50;
+  transition: gap 0.3s;
+
+  &.tenant-cta {
+    color: #10B981;
+  }
+
+  &:hover {
+    gap: 16px;
+  }
+}
+
+.signin-link {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #5b403e;
+
+  a {
+    color: #FF4E50;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

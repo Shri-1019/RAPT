@@ -1,0 +1,17 @@
+<a *ngIf="href; else buttonEl" 
+   [routerLink]="href" 
+   [class]="classes"
+   [class.btn-disabled]="disabled">
+  <lucide-angular *ngIf="icon" [img]="icon" [size]="iconSize" class="btn-icon"></lucide-angular>
+  <span><ng-content></ng-content></span>
+</a>
+
+<ng-template #buttonEl>
+  <button [type]="type" 
+          [class]="classes" 
+          [disabled]="disabled"
+          (click)="onClick($event)">
+    <lucide-angular *ngIf="icon" [img]="icon" [size]="iconSize" class="btn-icon"></lucide-angular>
+    <span><ng-content></ng-content></span>
+  </button>
+</ng-template>

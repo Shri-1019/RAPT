@@ -1,16 +1,10 @@
-# Compiled class file
+# ========================
+# Java / Spring Boot
+# ========================
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,7 +12,236 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+target/
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/MavenWrapperDownloader.java
+.mvn/wrapper/maven-wrapper.jar.sha1
+.mvn/wrapper/maven-wrapper.properties.sha1
+**/mvnw
+**/mvnw.cmd
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+application-prod.properties
+application-prod.yml
+
+# Spring Boot Actuator
+/actuator/
+
+# Spring Boot DevTools
+.springBeans
+
+# ========================
+# Angular / Node.js
+# ========================
+node_modules/
+dist/
+.angular/
+tmp/
+out-tsc/
+*.js.map
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+package-lock.json
+npm-shrinkwrap.json
+.npm/
+.eslintcache
+coverage/
+.nyc_output/
+
+# Angular CLI
+.angular/cache/
+.angular/config.json
+
+# ========================
+# Environment / Secrets
+# ========================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+secrets.properties
+secrets.yml
+*.key
+*.pem
+*.crt
+*.p12
+
+# ========================
+# Build Outputs
+# ========================
+build/
+bin/
+out/
+generated/
+*.tgz
+*.tar
+
+# ========================
+# IDE - IntelliJ IDEA
+# ========================
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dataSources/
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/maven.xml
+.idea/libraries/
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/vcs.xml
+.idea/shelf/
+.idea/codeStyles/
+.idea/inspectionProfiles/
+.idea/runConfigurations/
+
+# IDE - VS Code
+.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+.history/
+
+# IDE - Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+.apt_generated/
+.springBeans
+.sts4-cache/
+
+# IDE - NetBeans
+nbproject/
+nb-configuration.xml
+
+# ========================
+# OS
+# ========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+~$*
+
+# ========================
+# Database
+# ========================
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+*.lock.db
+*.db.tmp
+*.db.md
+*.db.lck
+hsqldb/
+derby.log
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
+*.log.gz
+*.log.zip
+log/
+temp/
+tmp/
+
+# ========================
+# Docker
+# ========================
+docker-compose.override.yml
+.dockerignore
+*.pid
+
+# ========================
+# Testing
+# ========================
+/.gradle/
+/build/
+/test-output/
+/surefire-reports/
+/target/surefire-reports/
+.jacoco/
+coverage/
+
+# ========================
+# Project Specific
+# ========================
+# Angular build output in Spring Boot static folder
+src/main/resources/static/
+src/main/resources/public/
+
+# Uploaded files (if any)
+uploads/
+files/
+attachments/
+
+# Session files
+.sessions/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# ========================
+# Security
+# ========================
+# Sensitive data files
+**/application-security.yml
+**/application-oauth.yml
+**/application-credentials.yml
+**/application-db.yml
+
+# Keystore files
+*.jks
+*.keystore
+*.truststore
+
+# SSH keys
+*.pem
+*.ppk
+*.pub
+*.key
+
+# ========================
+# CI/CD
+# ========================
+# GitHub Actions
+.github/workflows/*.local.yml
+
+# Jenkins
+.jenkins/
+jenkins/
+
+# GitLab CI
+.gitlab-ci.local.yml

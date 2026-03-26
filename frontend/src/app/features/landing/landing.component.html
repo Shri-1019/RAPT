@@ -1,0 +1,195 @@
+<div class="landing-page">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a routerLink="/" class="logo">
+        <div class="logo-icon">
+          <svg width="30" height="27" viewBox="0 0 30 27" fill="none">
+            <path d="M15 0L30 7.5L15 15L0 7.5L15 0Z" fill="#FF4E50"/>
+            <path d="M15 27L0 19.5L0 7.5L15 15L15 27Z" fill="#FF8C00"/>
+            <path d="M15 27L30 19.5L30 7.5L15 15L15 27Z" fill="#F9D423"/>
+          </svg>
+        </div>
+        <span class="logo-text">RAPT</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#" class="nav-link">PROBLEM</a>
+        <a href="#" class="nav-link">ABOUT</a>
+        <app-button variant="primary" size="sm" routerLink="/auth/login">LOGIN</app-button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="text-dark">Elevate Your</span>
+          <span class="text-red">Rental</span>
+          <span class="text-red">Momentum.</span>
+        </h1>
+        <p class="hero-description">
+          The complete ecosystem for landlords and tenants to manage agreements, payments, 
+          and maintenance with precision and speed.
+        </p>
+
+        <div class="hero-buttons">
+          <app-button variant="primary" size="md" routerLink="/auth/signup" [icon]="ArrowRight">
+            Get Started Free
+          </app-button>
+          <app-button variant="outline" size="md">
+            Watch Demo
+          </app-button>
+        </div>
+
+        <div class="social-proof">
+          <div class="avatars">
+            <div class="avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100')"></div>
+            <div class="avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100')"></div>
+            <div class="avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100')"></div>
+          </div>
+          <p class="social-text">JOIN 2,500+ LANDLORDS SCALING TODAY</p>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-glow"></div>
+        <div class="dashboard-mockup">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="Dashboard Preview">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="features-container">
+      <div class="features-header">
+        <div>
+          <p class="features-label">Precision Engineering</p>
+          <h2 class="features-title">
+            Built for Professional<br />Authority
+          </h2>
+        </div>
+        <p class="features-description">
+          Experience the "Grounded Catalyst" effect: robust security paired with high-energy operational efficiency.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div *ngFor="let feature of features" class="feature-card">
+          <div class="feature-icon" [style.backgroundColor]="feature.color + '15'">
+            <lucide-angular [img]="feature.icon" [size]="28" [color]="feature.color"></lucide-angular>
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="trust">
+    <div class="trust-container">
+      <div class="trust-card">
+        <div class="trust-badge">PRESTIGE STATUS</div>
+        <div class="trust-content">
+          <h3 class="trust-title">Secure Your Legacy<br />With Tonal Precision</h3>
+          <p class="trust-text">
+            Our multi-layer encryption ensures that your property data is as secure as a private vault, 
+            presented with editorial grace.
+          </p>
+        </div>
+      </div>
+
+      <div class="trust-sidebar">
+        <div class="trust-item red">
+          <div class="trust-pattern"></div>
+          <div>
+            <h4 class="trust-item-title">Zero Friction</h4>
+            <p class="trust-item-text">Experience the fastest payment processing in the rental industry.</p>
+          </div>
+        </div>
+        <div class="trust-item gray">
+          <div class="trust-item-header">
+            <div class="trust-icon"></div>
+            <div class="trust-badge-small">SOC2 COMPLIANT</div>
+          </div>
+          <div>
+            <h4 class="trust-item-title">Trust Verified</h4>
+            <p class="trust-item-text">Unwavering professional security for your sensitive agreements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta-container">
+      <h2 class="cta-title">Ready to transform your<br />property management?</h2>
+      <p class="cta-text">
+        Join the elite circle of landlords who prioritize momentum without sacrificing precision. 
+        Start your 14-day premium trial today.
+      </p>
+      <div class="cta-buttons">
+        <app-button variant="primary" size="md" routerLink="/auth/signup">SIGN UP NOW</app-button>
+        <app-button variant="dark" size="md">CONTACT SALES</app-button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="30" height="27" viewBox="0 0 30 27" fill="none">
+              <path d="M15 0L30 7.5L15 15L0 7.5L15 0Z" fill="#FF4E50"/>
+              <path d="M15 27L0 19.5L0 7.5L15 15L15 27Z" fill="#FF8C00"/>
+              <path d="M15 27L30 19.5L30 7.5L15 15L15 27Z" fill="#F9D423"/>
+            </svg>
+            <span>RAPT</span>
+          </div>
+          <p class="footer-description">
+            The architectural vanguard of property management. Precision. Speed. Authority.
+          </p>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Resources</h5>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Support Center</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Company</h5>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Pack</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h5 class="footer-heading">Connect</h5>
+          <ul class="footer-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-copyright">
+        © 2024 RAPT Management™ — Engineered for Exceptional Performance. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</div>
